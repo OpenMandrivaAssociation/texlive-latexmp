@@ -1,3 +1,9 @@
+# revision 15878
+# category Package
+# catalog-ctan /graphics/metapost/contrib/macros/latexmp
+# catalog-date 2007-02-23 00:16:39 +0100
+# catalog-license pd
+# catalog-version 1.2.1
 Name:		texlive-latexmp
 Version:	1.2.1
 Release:	1
@@ -44,6 +50,7 @@ solution provided by tex.mp.
 %{_texmfdistdir}/metapost/latexmp/latexmp.mp
 %doc %{_texmfdistdir}/doc/metapost/latexmp/README
 %doc %{_texmfdistdir}/doc/metapost/latexmp/latexmp.pdf
+%doc %{_tlpkgobjdir}/*.tlpobj
 
 #-----------------------------------------------------------------------
 %prep
@@ -54,3 +61,5 @@ solution provided by tex.mp.
 %install
 mkdir -p %{buildroot}%{_texmfdistdir}
 cp -fpar metapost doc %{buildroot}%{_texmfdistdir}
+mkdir -p %{buildroot}%{_tlpkgobjdir}
+cp -fpa tlpkg/tlpobj/*.tlpobj %{buildroot}%{_tlpkgobjdir}
