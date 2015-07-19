@@ -6,7 +6,7 @@
 # catalog-version 1.2.1
 Name:		texlive-latexmp
 Version:	1.2.1
-Release:	9
+Release:	10
 Summary:	Interface for LaTeX-based typesetting in MetaPost
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/graphics/metapost/contrib/macros/latexmp
