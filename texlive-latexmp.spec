@@ -3,7 +3,7 @@ Version:	55643
 Release:	2
 Summary:	Interface for LaTeX-based typesetting in MetaPost
 Group:		Publishing
-URL:		http://www.ctan.org/tex-archive/graphics/metapost/contrib/macros/latexmp
+URL:		https://www.ctan.org/tex-archive/graphics/metapost/contrib/macros/latexmp
 License:	PD
 Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/latexmp.r%{version}.tar.xz
 Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/latexmp.doc.r%{version}.tar.xz
