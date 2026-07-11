@@ -1,47 +1,26 @@
-Name:		texlive-latexmp
-Version:	55643
-Release:	2
+%global tl_name latexmp
+%global tl_revision 55643
+
+Name:		texlive-%{tl_name}
+Epoch:		1
+Version:	1.2.1
+Release:	%{tl_revision}.1
 Summary:	Interface for LaTeX-based typesetting in MetaPost
 Group:		Publishing
 URL:		https://www.ctan.org/tex-archive/graphics/metapost/contrib/macros/latexmp
-License:	PD
-Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/latexmp.r%{version}.tar.xz
-Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/latexmp.doc.r%{version}.tar.xz
+License:	pd
+Source0:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/latexmp.r%{tl_revision}.tar.xz
+Source1:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/latexmp.doc.r%{tl_revision}.tar.xz
 BuildArch:	noarch
-BuildRequires:	texlive-tlpkg
-Requires(pre):	texlive-tlpkg
-Requires(post):	texlive-kpathsea
+BuildSystem:	texlive
+Provides:	texlive(%{tl_name}) = %{tl_revision}
 
 %description
-The MetaPost package latexMP implements a user-friendly
-interface to access LaTeX-based typesetting capabilities in
-MetaPost. The text to be typeset is given as string. This
-allows even dynamic text elements, for example counters, to be
-used in labels. Compared to other implementations it is much
-more flexible, since it can be used as direct replacement for
-btex..etex, and much faster, compared for example to the
+The MetaPost package latexMP implements a user-friendly interface to
+access LaTeX-based typesetting capabilities in MetaPost. The text to be
+typeset is given as string. This allows even dynamic text elements, for
+example counters, to be used in labels. Compared to other
+implementations it is much more flexible, since it can be used as direct
+replacement for btex.etex, and much faster, compared for example to the
 solution provided by tex.mp.
 
-%post
-%{_sbindir}/texlive.post
-
-%postun
-if [ $1 -eq 0 ]; then
-	%{_sbindir}/texlive.post
-fi
-
-#-----------------------------------------------------------------------
-%files
-%{_texmfdistdir}/metapost/latexmp/latexmp.mp
-%doc %{_texmfdistdir}/doc/metapost/latexmp/README
-%doc %{_texmfdistdir}/doc/metapost/latexmp/latexmp.pdf
-
-#-----------------------------------------------------------------------
-%prep
-%autosetup -p1 -c -a1
-
-%build
-
-%install
-mkdir -p %{buildroot}%{_texmfdistdir}
-cp -fpar metapost doc %{buildroot}%{_texmfdistdir}
